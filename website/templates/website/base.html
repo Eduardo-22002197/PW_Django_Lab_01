@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel = "stylesheet" href = "{% static 'website/css/base.css' %}">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <header class = "jumbotron text-center">
+            <h1> DJANGO APP </h1>
+            <p> Simplify the web with Django. </p>
+            <nav> 
+                <a href = "{% url 'python' %}" class = "btn btn-info"> Python </a>
+                <a href = "{% url 'django' %}" class = "btn btn-info"> Django </a>
+                <a href = "{% url 'web_dev' %}" class = "btn btn-info"> Web Development </a>
+            </nav>
+        </header>
+
+        <article class = "container">
+            <main class="col-sm-6"> 
+                {% block main %}
+
+                {% endblock main %}
+            </main>
+
+            <aside class="col-sm-6">
+                <img src="{% static 'website/imagens/Norwegian_Winter_(B&W).jpg' %}" alt="">
+            </aside>
+        </article>
+
+        <footer>
+        </footer>
+    </body>
+</html>
